@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.example.proyecto_android_final_iker_markel.databinding.ActivityMainBinding
+import com.parse.Parse;
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,7 +32,16 @@ class MainActivity : AppCompatActivity() {
         binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
+
         }
+
+
+        Parse.initialize(
+            Parse.Configuration.Builder(this)
+                .applicationId(getString(R.string.back4app_app_id))
+                .clientKey(getString(R.string.back4app_client_key))
+                .server(getString(R.string.back4app_server_url))
+                .build());
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
