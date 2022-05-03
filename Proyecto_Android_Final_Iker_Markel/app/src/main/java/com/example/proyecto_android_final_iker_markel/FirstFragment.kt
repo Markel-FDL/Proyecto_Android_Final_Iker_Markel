@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.proyecto_android_final_iker_markel.databinding.FragmentFirstBinding
 
 /**
@@ -18,6 +20,8 @@ class FirstFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    private lateinit var miRecyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +36,16 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        miRecyclerView=binding.Contenedores
+        miRecyclerView.layoutManager= LinearLayoutManager(activity)
+        miRecyclerView.adapter=Adaptador(this,(activity as MainActivity).miViewModel.listaPeliculas)
+
+ /*       binding.fab.setOnClickListener { view ->
+            findNavController().navigate(R.id.action_SecondFragment_to_detalleFragment)
+        }
+    }
+
+  */
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
