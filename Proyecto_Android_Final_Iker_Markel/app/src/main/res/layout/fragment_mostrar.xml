@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment_mostrar">
+    tools:context=".MostrarFragment">
 
 
     <LinearLayout
@@ -18,44 +18,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/Mod_Titulo"
+        <TextView
+            android:id="@+id/Ver_Titulo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/titulo"
-            android:inputType="textPersonName" />
+            android:layout_height="40dp"
+            android:text="@string/titulo" />
 
-        <EditText
-            android:id="@+id/Mod_Autor"
+        <TextView
+            android:id="@+id/Ver_Autor"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/autor"
-            android:inputType="textPersonName" />
+            android:layout_height="40dp"
+            android:text="@string/autor" />
 
-        <EditText
-            android:id="@+id/Mod_Genero"
+        <TextView
+            android:id="@+id/Ver_Genero"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/genero"
-            android:inputType="textPersonName" />
+            android:layout_height="40dp"
+            android:text="@string/genero" />
 
-        <EditText
-            android:id="@+id/Mod_Fecha"
+        <TextView
+            android:id="@+id/Ver_Fecha"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/fecha"
-            android:inputType="textPersonName" />
+            android:layout_height="40dp"
+            android:text="@string/fecha" />
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:id="@+id/llBotones"
+        android:id="@+id/Ver_Botones"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/llDatos"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,15 +56,10 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            android:id="@+id/Mod_Volver"
-            android:layout_width="282dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="174dp"
-            android:text="@string/volver"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/llDatos" />
+            android:id="@+id/Ver_Volver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/volverr" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

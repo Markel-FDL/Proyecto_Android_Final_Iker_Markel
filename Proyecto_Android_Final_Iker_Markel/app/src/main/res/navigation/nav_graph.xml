@@ -10,19 +10,38 @@
         android:name="com.example.proyecto_android_final_iker_markel.FirstFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
-
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_FirstFragment_to_insertarFragment"
+            app:destination="@id/insertarFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_modificarFragment"
+            app:destination="@id/modificarFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_mostrarFragment3"
+            app:destination="@id/mostrarFragment3" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.proyecto_android_final_iker_markel.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        android:id="@+id/insertarFragment"
+        android:name="com.example.proyecto_android_final_iker_markel.InsertarFragment"
+        android:label="InsertarFragment" >
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            android:id="@+id/action_insertarFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/modificarFragment"
+        android:name="com.example.proyecto_android_final_iker_markel.ModificarFragment"
+        android:label="ModificarFragment" >
+        <action
+            android:id="@+id/action_modificarFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mostrarFragment3"
+        android:name="com.example.proyecto_android_final_iker_markel.MostrarFragment"
+        android:label="MostrarFragment" >
+        <action
+            android:id="@+id/action_mostrarFragment3_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>

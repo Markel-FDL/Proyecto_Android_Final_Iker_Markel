@@ -13,5 +13,17 @@
     <string name="back4app_server_url">https://parseapi.back4app.com/</string>
     <string name="back4app_app_id">Lm2pQHzQ27NxfCGB03cQ6bLX9bzXIUcvm9jbqb66</string>
     <string name="back4app_client_key">7TiCuqFO1xCAESn2kzqNNPuqFBHXXFzh7BiosFav</string>
+    <string name="editar">Editar</string>
+    <string name="volver">Volver</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="insertar">Insertar</string>
+    <string name="titulo">Titulo</string>
+    <string name="autor">Autor</string>
+    <string name="genero">Genero</string>
+    <string name="fecha">Fecha</string>
+    <string name="modificar">Modificar</string>
+    <string name="insert">Insertar</string>
+    <string name="volverr">Volver</string>
 
 </resources>
