@@ -28,14 +28,13 @@ class InsertarFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         binding.InserTitulo.
         binding.InserAutor.
         binding.InserGenero.
         binding.InserFecha.
         binding.Inser.isVisible=true
 
-        binding.VerVolver.setOnClickListener {
+        binding.InserInsert.setOnClickListener {
             findNavController().navigate(R.id.action_mostrarFragment3_to_FirstFragment)
         }
 

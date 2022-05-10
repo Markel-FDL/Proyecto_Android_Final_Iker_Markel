@@ -11,15 +11,19 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
-class Adaptador(var fragmento: Fragment, ): RecyclerView.Adapter<Adaptador.ViewHolder>() {
+class Adaptador(var fragmento:Fragment, var listaLibros: MutableList<Libro>): RecyclerView.Adapter<Adaptador.ViewHolder>() {
 
-    class ViewHolder (v: View):RecyclerView.ViewHolder(v){
+    inner class ViewHolder (v: View):RecyclerView.ViewHolder(v){
         var titulo: ImageView =v.findViewById(R.id.Titulo)
         var autor: TextView =v.findViewById(R.id.Autor)
+        var posicion:Int=-1
         init{
             v.setOnClickListener {
                 val miBundle: Bundle = bundleOf("id" to this.posicion)
-                fragmento.findNavController().navigate(R.id.action_SecondFragment_to_detalleFragment, miBundle)
+                fragmento.findNavController().navigate(R.id.action_FirstFragment_to_modificarFragment, miBundle)
+
+                val miBundle1: Bundle = bundleOf("id" to this.posicion)
+                fragmento.findNavController().navigate(R.id.action_FirstFragment_to_mostrarFragment3, miBundle)
             }
         }
     }
@@ -30,10 +34,15 @@ class Adaptador(var fragmento: Fragment, ): RecyclerView.Adapter<Adaptador.ViewH
         return ViewHolder(v)
     }
 
-    override fun onBindViewHolder(holder: Adaptador.ViewHolder, position: Int) {
-        holder.titulo.text=
-        holder.autor.text=
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        //val drawable: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.myimage, null)
+        holder.titulo.=listaLibros[position].titulo
+        holder.autor.text=listaLibros[position].genero
+        holder.anio.text=lista[position].anio.toString()
+        holder.caratula.setImageResource(lista[position].caratula)
+        holder.posicion=position
     }
+
 
     override fun getItemCount(): Int {
         return 10

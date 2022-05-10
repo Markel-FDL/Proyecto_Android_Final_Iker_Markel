@@ -38,7 +38,7 @@ class FirstFragment : Fragment() {
 
         miRecyclerView=binding.Contenedores
         miRecyclerView.layoutManager= LinearLayoutManager(activity)
-        miRecyclerView.adapter=Adaptador(this,(activity as MainActivity).miViewModel.listaPeliculas)
+        miRecyclerView.adapter=Adaptador(this,(activity as MainActivity).miViewModel.listaLibros)
 
  /*       binding.fab.setOnClickListener { view ->
             findNavController().navigate(R.id.action_SecondFragment_to_detalleFragment)

@@ -29,11 +29,12 @@ class MostrarFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val id:Int=arguments?.getInt("id") ?:-1
 
-            binding.VerTitulo.setText((activity as MainActivity).miViewModel.listaPeliculas[id].titulo)
-            binding.VerAutor.setText((activity as MainActivity).miViewModel.listaPeliculas[id].genero)
-            binding.VerGenero.setText((activity as MainActivity).miViewModel.listaPeliculas[id].anio.toString())
-            binding.VerFecha.setText((activity as MainActivity).miViewModel.listaPeliculas[id].anio.toString())
+            binding.VerTitulo.setText((activity as MainActivity).miViewModel.listaLibros[id].titulo)
+            binding.VerAutor.setText((activity as MainActivity).miViewModel.listaLibros[id].autor)
+            binding.VerGenero.setText((activity as MainActivity).miViewModel.listaLibros[id].genero)
+            binding.VerFecha.setText((activity as MainActivity).miViewModel.listaLibros[id].fecha)
             binding.VerVolver.isVisible=true
 
         binding.VerVolver.setOnClickListener {

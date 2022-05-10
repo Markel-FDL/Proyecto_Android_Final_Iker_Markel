@@ -8,6 +8,11 @@ import kotlinx.coroutines.currentCoroutineContext
 
 class VM : ViewModel() {
 
+    var listaLibros: MutableList<Libro> = mutableListOf()
+    init{
+        listaLibros=cargarPeliculas()
+    }
+
     private fun insertarLibro(titulo: String, autor: String, genero: String, fecha: Int) {
 
         val objeto = ParseObject("Libros")
