@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.example.proyecto_android_final_iker_markel.databinding.FragmentInsertarBinding
@@ -28,18 +29,24 @@ class InsertarFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.InserTitulo.
-        binding.InserAutor.
-        binding.InserGenero.
-        binding.InserFecha.
-        binding.Inser.isVisible=true
-
         binding.InserInsert.setOnClickListener {
-            findNavController().navigate(R.id.action_mostrarFragment3_to_FirstFragment)
+
+            if (binding.InserTitulo.text.isNotEmpty() &&
+                binding.InserAutor.text.isNotEmpty() &&
+                binding.InserGenero.text.isNotEmpty() &&
+                binding.InserFecha.text.isNotEmpty()
+            ) {
+                (activity as MainActivity).miViewModel.insertarLibro(
+                    binding.InserTitulo.text.toString(), binding.InserAutor.text.toString(),
+                    binding.InserGenero.text.toString(), binding.InserFecha.text.toString().toInt()
+                )
+                Toast.makeText(activity, "Libro insertado", Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_insertarFragment_to_FirstFragment)
+
+            }
+
+
         }
 
-
     }
-
-
 }

@@ -14,7 +14,7 @@ class VM : ViewModel() {
         listaLibros=listarLibros()
     }
 
-    private fun insertarLibro(titulo: String, autor: String, genero: String, fecha: Int) {
+    public fun insertarLibro(titulo: String, autor: String, genero: String, fecha: Int) {
 
         val objeto = ParseObject("Libros")
         objeto.put("Titulo", titulo)

@@ -13,10 +13,11 @@ import androidx.recyclerview.widget.RecyclerView
 
 class Adaptador(var fragmento:Fragment, var listaLibros: MutableList<Libro>): RecyclerView.Adapter<Adaptador.ViewHolder>() {
 
-    inner class ViewHolder (v: View):RecyclerView.ViewHolder(v){
-        var titulo: TextView =v.findViewById(R.id.Titulo)
-        var autor: TextView =v.findViewById(R.id.Autor)
-        var posicion:Int=-1
+    inner class ViewHolder (v: View):RecyclerView.ViewHolder(v) {
+        var titulo: TextView = v.findViewById(R.id.Titulo)
+        var autor: TextView = v.findViewById(R.id.Autor)
+        var posicion: Int = -1
+
         init {
             v.setOnClickListener {
 
@@ -27,12 +28,12 @@ class Adaptador(var fragmento:Fragment, var listaLibros: MutableList<Libro>): Re
             v.setOnLongClickListener {
 
                 val miBundle2: Bundle = bundleOf("id" to this.posicion)
-                fragmento.findNavController().navigate(R.id.action_FirstFragment_to_modificarFragment, miBundle2)
+                fragmento.findNavController()
+                    .navigate(R.id.action_FirstFragment_to_modificarFragment, miBundle2)
                 true
-
+            }
         }
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Adaptador.ViewHolder {
         val v=LayoutInflater.from(parent.context).inflate(R.layout.layout_contenedor, parent, false)
