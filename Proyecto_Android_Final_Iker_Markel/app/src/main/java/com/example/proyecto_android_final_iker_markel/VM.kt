@@ -9,6 +9,7 @@ import kotlinx.coroutines.currentCoroutineContext
 class VM : ViewModel() {
 
     var listaLibros: MutableList<Libro> = mutableListOf()
+
     init{
         listaLibros=listarLibros()
     }
@@ -27,7 +28,7 @@ class VM : ViewModel() {
         }
     }
 
-    private fun eliminarLibro(id: String) {
+    fun eliminarLibro(id: String) {
 
         val query = ParseQuery.getQuery<ParseObject>("Libros")
         query.whereEqualTo("objectId", id)
@@ -39,7 +40,7 @@ class VM : ViewModel() {
         }
     }
 
-    private fun modificarLibro(
+    fun modificarLibro(
         id: String,
         titulo: String,
         autor: String,
@@ -68,7 +69,7 @@ class VM : ViewModel() {
         }
     }
 
-    private fun listarLibros() : MutableList<Libro> {
+    fun listarLibros() : MutableList<Libro> {
         val ll: MutableList<Libro> = mutableListOf()
         val query = ParseQuery<ParseObject>("Libros")
         query.orderByDescending("Titulo")

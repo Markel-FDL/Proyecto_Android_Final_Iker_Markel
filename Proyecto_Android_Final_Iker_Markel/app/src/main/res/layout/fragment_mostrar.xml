@@ -55,11 +55,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <Button
-            android:id="@+id/Ver_Volver"
+        <LinearLayout
+            android:id="@+id/Ver_Botones"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/volverr" />
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llDatos">
+
+            <Button
+                android:id="@+id/eliminar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eliminar" />
+
+            <Button
+                android:id="@+id/VerVolver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/volverr" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

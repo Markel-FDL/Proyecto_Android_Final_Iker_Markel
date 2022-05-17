@@ -15,6 +15,7 @@
     <string name="back4app_client_key">7TiCuqFO1xCAESn2kzqNNPuqFBHXXFzh7BiosFav</string>
     <string name="editar">Editar</string>
     <string name="volver">Volver</string>
+    <string name="eliminar">Eliminar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="insertar">Insertar</string>

@@ -41,6 +41,8 @@ class MostrarFragment : Fragment() {
             findNavController().navigate(R.id.action_mostrarFragment3_to_FirstFragment)
         }
 
-
+        binding.eliminar.setOnClickListener{
+            (activity as MainActivity).miViewModel.eliminarLibro((activity as MainActivity).miViewModel.listaLibros[id].id)
+        }
     }
 }
