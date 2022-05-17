@@ -14,16 +14,27 @@ import androidx.recyclerview.widget.RecyclerView
 class Adaptador(var fragmento:Fragment, var listaLibros: MutableList<Libro>): RecyclerView.Adapter<Adaptador.ViewHolder>() {
 
     inner class ViewHolder (v: View):RecyclerView.ViewHolder(v){
-        var titulo: ImageView =v.findViewById(R.id.Titulo)
+        var titulo: TextView =v.findViewById(R.id.Titulo)
         var autor: TextView =v.findViewById(R.id.Autor)
         var posicion:Int=-1
-        init{
+        init {
             v.setOnClickListener {
-                val miBundle: Bundle = bundleOf("id" to this.posicion)
-                fragmento.findNavController().navigate(R.id.action_FirstFragment_to_modificarFragment, miBundle)
 
                 val miBundle1: Bundle = bundleOf("id" to this.posicion)
-                fragmento.findNavController().navigate(R.id.action_FirstFragment_to_mostrarFragment3, miBundle)
+                fragmento.findNavController()
+                    .navigate(R.id.action_FirstFragment_to_mostrarFragment3, miBundle1)
+            }
+            v.setOnLongClickListener {
+
+                val miBundle2: Bundle = bundleOf("id" to this.posicion)
+                fragmento.findNavController().navigate(R.id.action_FirstFragment_to_modificarFragment, miBundle2)
+
+
+
+
+
+                val miBundle: Bundle = bundleOf("id" to this.posicion)
+                fragmento.findNavController().navigate(R.id.action_FirstFragment_to_modificarFragment, miBundle)
             }
         }
     }
@@ -36,10 +47,8 @@ class Adaptador(var fragmento:Fragment, var listaLibros: MutableList<Libro>): Re
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         //val drawable: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.myimage, null)
-        holder.titulo.=listaLibros[position].titulo
-        holder.autor.text=listaLibros[position].genero
-        holder.anio.text=lista[position].anio.toString()
-        holder.caratula.setImageResource(lista[position].caratula)
+        holder.titulo.text = listaLibros[position].titulo
+        holder.autor.text = listaLibros[position].autor
         holder.posicion=position
     }
 
