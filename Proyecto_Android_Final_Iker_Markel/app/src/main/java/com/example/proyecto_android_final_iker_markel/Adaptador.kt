@@ -28,14 +28,8 @@ class Adaptador(var fragmento:Fragment, var listaLibros: MutableList<Libro>): Re
 
                 val miBundle2: Bundle = bundleOf("id" to this.posicion)
                 fragmento.findNavController().navigate(R.id.action_FirstFragment_to_modificarFragment, miBundle2)
+                true
 
-
-
-
-
-                val miBundle: Bundle = bundleOf("id" to this.posicion)
-                fragmento.findNavController().navigate(R.id.action_FirstFragment_to_modificarFragment, miBundle)
-            }
         }
     }
 
