@@ -10,7 +10,7 @@ class VM : ViewModel() {
 
     var listaLibros: MutableList<Libro> = mutableListOf()
     init{
-        listaLibros=cargarPeliculas()
+        listaLibros=listarLibros()
     }
 
     private fun insertarLibro(titulo: String, autor: String, genero: String, fecha: Int) {
@@ -46,7 +46,6 @@ class VM : ViewModel() {
         genero: String,
         fecha: Int
     ) {
-
         val query = ParseQuery.getQuery<ParseObject>("Libros")
         query.whereEqualTo("objectId", id)
         query.getFirstInBackground { parseObject, parseException ->
@@ -67,5 +66,26 @@ class VM : ViewModel() {
                 }
             }
         }
+    }
+
+    private fun listarLibros() : MutableList<Libro> {
+        val ll: MutableList<Libro> = mutableListOf()
+        val query = ParseQuery<ParseObject>("Libros")
+        query.orderByDescending("Titulo")
+        query.findInBackground { objects: List<ParseObject>, e ->
+            if (e == null) {
+                for (i in objects) {
+                    val temp: Libro = Libro(
+                        i.objectId,
+                        i.getString("Titulo"),
+                        i.getString("Autor"),
+                        i.getString("Genero"),
+                        i.getInt("Fecha")
+                    )
+                    ll.add(temp)
+                }
+            }
+        }
+        return ll
     }
 }
