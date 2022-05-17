@@ -11,7 +11,7 @@ class VM : ViewModel() {
     var listaLibros: MutableList<Libro> = mutableListOf()
 
     init{
-        listaLibros=listarLibros()
+        listaLibros.add(Libro("jdDG1Kpq1w","El quijote","Anonimo", "Ficcion",1605))
     }
 
     public fun insertarLibro(titulo: String, autor: String, genero: String, fecha: Int) {

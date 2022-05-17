@@ -21,13 +21,13 @@ class Adaptador(var fragmento:Fragment, var listaLibros: MutableList<Libro>): Re
         init {
             v.setOnClickListener {
 
-                val miBundle1: Bundle = bundleOf("id" to this.posicion)
+                val miBundle1: Bundle = bundleOf("id" to this.position)
                 fragmento.findNavController()
                     .navigate(R.id.action_FirstFragment_to_mostrarFragment3, miBundle1)
             }
             v.setOnLongClickListener {
 
-                val miBundle2: Bundle = bundleOf("id" to this.posicion)
+                val miBundle2: Bundle = bundleOf("id" to this.position)
                 fragmento.findNavController()
                     .navigate(R.id.action_FirstFragment_to_modificarFragment, miBundle2)
                 true
@@ -42,14 +42,14 @@ class Adaptador(var fragmento:Fragment, var listaLibros: MutableList<Libro>): Re
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         //val drawable: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.myimage, null)
-        holder.titulo.text = listaLibros[position].titulo
-        holder.autor.text = listaLibros[position].autor
+        holder.titulo.text = listaLibros[position].titulo.toString()
+        holder.autor.text = listaLibros[position].autor.toString()
         holder.posicion=position
     }
 
 
     override fun getItemCount(): Int {
-        return 10
+        return listaLibros.size
     }
 
 

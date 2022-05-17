@@ -27,6 +27,13 @@ class ModificarFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val id:Int=arguments?.getInt("id") ?:-1
+        var libroSelec = (activity as MainActivity).miViewModel.listaLibros[id]
+
+        binding.ModTitulo.setText(libroSelec.titulo)
+        binding.ModAutor.setText(libroSelec.autor)
+        binding.ModGenero.setText(libroSelec.genero)
+        binding.ModFecha.setText(libroSelec.fecha.toString())
+
 
         if(binding.ModTitulo.text.isNotEmpty() &&
             binding.ModAutor.text.isNotEmpty() &&

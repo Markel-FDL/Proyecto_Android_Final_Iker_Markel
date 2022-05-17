@@ -34,7 +34,7 @@ class MostrarFragment : Fragment() {
             binding.VerTitulo.setText((activity as MainActivity).miViewModel.listaLibros[id].titulo)
             binding.VerAutor.setText((activity as MainActivity).miViewModel.listaLibros[id].autor)
             binding.VerGenero.setText((activity as MainActivity).miViewModel.listaLibros[id].genero)
-            binding.VerFecha.setText((activity as MainActivity).miViewModel.listaLibros[id].fecha)
+            binding.VerFecha.setText((activity as MainActivity).miViewModel.listaLibros[id].fecha.toString())
             binding.VerVolver.isVisible=true
 
         binding.VerVolver.setOnClickListener {
