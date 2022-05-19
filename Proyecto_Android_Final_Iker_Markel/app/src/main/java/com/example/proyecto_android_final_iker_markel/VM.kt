@@ -10,11 +10,11 @@ class VM : ViewModel() {
 
     var listaLibros: MutableList<Libro> = mutableListOf()
 
-    init{
-        listaLibros.add(Libro("jdDG1Kpq1w","El quijote","Anonimo", "Ficcion",1605))
+    init {
+        actualizarLista()
     }
 
-    public fun insertarLibro(titulo: String, autor: String, genero: String, fecha: Int) {
+     fun insertarLibro(titulo: String, autor: String, genero: String, fecha: Int) {
 
         val objeto = ParseObject("Libros")
         objeto.put("Titulo", titulo)
@@ -41,52 +41,41 @@ class VM : ViewModel() {
     }
 
     fun modificarLibro(
-        id: String,
-        titulo: String,
-        autor: String,
-        genero: String,
-        fecha: Int
+        libro: Libro
     ) {
         val query = ParseQuery.getQuery<ParseObject>("Libros")
-        query.whereEqualTo("objectId", id)
+        query.whereEqualTo("objectId", libro.id)
         query.getFirstInBackground { parseObject, parseException ->
             if (parseException == null) {
-                if (titulo != null) {
-                    parseObject.put("Titulo", titulo)
-                }
-                if (autor != null) {
-                    parseObject.put("Autor", autor)
-                }
-                if (genero != null) {
-                    parseObject.put("Genero", genero)
-                }
-                if (fecha != null) {
-                    parseObject.put("Fecha", fecha)
-                }
+                parseObject.put("Titulo", libro.titulo)
+                parseObject.put("Autor", libro.autor)
+                parseObject.put("Genero", libro.genero)
+                parseObject.put("Fecha", libro.fecha)
                 parseObject.saveInBackground {
                 }
             }
         }
     }
 
-    fun listarLibros() : MutableList<Libro> {
+    fun listarLibros(): MutableList<Libro>  {
         val ll: MutableList<Libro> = mutableListOf()
         val query = ParseQuery<ParseObject>("Libros")
         query.orderByDescending("Titulo")
-        query.findInBackground { objects: List<ParseObject>, e ->
-            if (e == null) {
-                for (i in objects) {
-                    val temp: Libro = Libro(
-                        i.objectId,
-                        i.getString("Titulo"),
-                        i.getString("Autor"),
-                        i.getString("Genero"),
-                        i.getInt("Fecha")
-                    )
-                    ll.add(temp)
-                }
-            }
+        val lista = query.find()
+        for (i in lista){
+            val temp: Libro = Libro(
+                i.objectId,
+                i.getString("Titulo"),
+                i.getString("Autor"),
+                i.getString("Genero"),
+                i.getInt("Fecha")
+            )
+            ll.add(temp)
         }
         return ll
+    }
+
+    fun actualizarLista(){
+        listaLibros = listarLibros()
     }
 }
