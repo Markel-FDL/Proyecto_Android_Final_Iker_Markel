@@ -40,12 +40,6 @@ class FirstFragment : Fragment() {
         miRecyclerView.layoutManager= LinearLayoutManager(activity)
         miRecyclerView.adapter=Adaptador(this,(activity as MainActivity).miViewModel.listaLibros)
 
- /*       binding.fab.setOnClickListener { view ->
-            findNavController().navigate(R.id.action_SecondFragment_to_detalleFragment)
-        }
-    }
-
-  */
         binding.fab.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_insertarFragment)
         }
