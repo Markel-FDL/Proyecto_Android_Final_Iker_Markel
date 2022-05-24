@@ -36,6 +36,9 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         (activity as MainActivity).miViewModel.actualizarLista()
         super.onViewCreated(view, savedInstanceState)
+
+        (activity as MainActivity).supportActionBar?.title = "Lista de libros"
+
         miRecyclerView=binding.Contenedores
         miRecyclerView.layoutManager= LinearLayoutManager(activity)
         miRecyclerView.adapter=Adaptador(this,(activity as MainActivity).miViewModel.listaLibros)

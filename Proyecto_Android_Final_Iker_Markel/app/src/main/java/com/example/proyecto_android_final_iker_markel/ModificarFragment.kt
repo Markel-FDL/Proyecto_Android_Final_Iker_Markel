@@ -26,6 +26,8 @@ class ModificarFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        (activity as MainActivity).supportActionBar?.title = "Modificar libro"
+
         val id: Int = arguments?.getInt("id") ?: -1
         var libroSelec = (activity as MainActivity).miViewModel.listaLibros[id]
 

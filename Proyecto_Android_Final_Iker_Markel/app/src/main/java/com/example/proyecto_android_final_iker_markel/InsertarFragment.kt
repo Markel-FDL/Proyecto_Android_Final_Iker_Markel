@@ -19,15 +19,20 @@ class InsertarFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+
     ): View? {
 
         _binding = FragmentInsertarBinding.inflate(inflater, container, false)
+
+
         return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        (activity as MainActivity).supportActionBar?.title = "Añadir libro"
 
         binding.InserInsert.setOnClickListener {
 

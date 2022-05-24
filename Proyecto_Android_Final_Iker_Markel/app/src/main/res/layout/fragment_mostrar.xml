@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/libros_editada"
     tools:context=".MostrarFragment">
 
 
@@ -11,7 +12,9 @@
         android:id="@+id/llDatos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/llBotones"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,24 +25,36 @@
             android:id="@+id/Ver_Titulo"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
             android:text="@string/titulo" />
 
         <TextView
             android:id="@+id/Ver_Autor"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
             android:text="@string/autor" />
 
         <TextView
             android:id="@+id/Ver_Genero"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
             android:text="@string/genero" />
 
         <TextView
             android:id="@+id/Ver_Fecha"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
             android:text="@string/fecha" />
 
     </LinearLayout>
@@ -59,12 +74,14 @@
             android:id="@+id/eliminar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="22sp"
             android:text="@string/eliminar" />
 
         <Button
             android:id="@+id/VerVolver"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="22sp"
             android:text="@string/volverr" />
 
     </LinearLayout>

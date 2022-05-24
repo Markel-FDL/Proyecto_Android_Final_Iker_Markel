@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/libros_editada"
     tools:context=".InsertarFragment">
 
 
@@ -23,6 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textSize="25sp"
+            android:textColorHint="@color/black"
             android:hint="@string/titulo"
             android:inputType="textPersonName" />
 
@@ -31,6 +34,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textSize="25sp"
+            android:textColorHint="@color/black"
             android:hint="@string/autor"
             android:inputType="textPersonName" />
 
@@ -39,6 +44,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textSize="25sp"
+            android:textColorHint="@color/black"
             android:hint="@string/genero"
             android:inputType="textPersonName" />
 
@@ -47,6 +54,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textSize="25sp"
+            android:textColorHint="@color/black"
             android:hint="@string/fecha"
             android:inputType="textPersonName" />
     </LinearLayout>
@@ -67,6 +76,7 @@
             android:id="@+id/Inser_Insert"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="22sp"
             android:text="@string/insert" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

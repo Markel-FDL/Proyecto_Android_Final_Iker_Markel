@@ -29,6 +29,8 @@ class MostrarFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        (activity as MainActivity).supportActionBar?.title = "Datos libro"
+
         val id:Int=arguments?.getInt("id") ?:-1
 
             binding.VerTitulo.setText((activity as MainActivity).miViewModel.listaLibros[id].titulo)
