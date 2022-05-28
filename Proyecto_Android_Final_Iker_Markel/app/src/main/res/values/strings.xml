@@ -26,5 +26,10 @@
     <string name="modificar">Modificar</string>
     <string name="insert">Insertar</string>
     <string name="volverr">Volver</string>
+    <string name="hecho_por">Hecho por:</string>
+    <string name="iker_lerones_y_markel_fernandez_de_labastida">Iker Lerones y Markel Fernandez de Labastida</string>
+    <string name="volver_a_la_lista">Volver a la lista</string>
+    <string name="Extra">Extra</string>
+    <string name="Creditos">Creditos</string>
 
 </resources>
