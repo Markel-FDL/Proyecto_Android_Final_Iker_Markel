@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,9 +40,9 @@ class FirstFragment : Fragment() {
 
         (activity as MainActivity).supportActionBar?.title = "Lista de libros"
 
-        miRecyclerView=binding.Contenedores
-        miRecyclerView.layoutManager= LinearLayoutManager(activity)
-        miRecyclerView.adapter=Adaptador(this,(activity as MainActivity).miViewModel.listaLibros)
+        miRecyclerView = binding.Contenedores
+        miRecyclerView.layoutManager = LinearLayoutManager(activity)
+        miRecyclerView.adapter = Adaptador(this, (activity as MainActivity).miViewModel.listaLibros)
 
         binding.fab.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_insertarFragment)
@@ -53,5 +54,11 @@ class FirstFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onResume() {
+        val ft: FragmentTransaction = requireFragmentManager().beginTransaction()
+        ft.detach(this).attach(this).commit()
+        super.onResume()
     }
 }

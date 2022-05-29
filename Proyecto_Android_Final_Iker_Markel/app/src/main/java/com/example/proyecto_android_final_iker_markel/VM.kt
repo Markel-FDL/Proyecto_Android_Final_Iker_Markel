@@ -60,7 +60,7 @@ class VM : ViewModel() {
     fun listarLibros(): MutableList<Libro>  {
         val ll: MutableList<Libro> = mutableListOf()
         val query = ParseQuery<ParseObject>("Libros")
-        query.orderByDescending("Titulo")
+        query.orderByAscending("Titulo")
         val lista = query.find()
         for (i in lista){
             val temp: Libro = Libro(

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.fragment.findNavController
 import com.example.proyecto_android_final_iker_markel.databinding.FragmentMostrarBinding
 
@@ -45,6 +46,7 @@ class MostrarFragment : Fragment() {
 
         binding.eliminar.setOnClickListener{
             (activity as MainActivity).miViewModel.eliminarLibro((activity as MainActivity).miViewModel.listaLibros[id].id)
+            (activity as MainActivity).miViewModel.actualizarLista()
             findNavController().navigate(R.id.action_mostrarFragment3_to_FirstFragment)
         }
     }

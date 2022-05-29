@@ -1,11 +1,12 @@
 package com.example.proyecto_android_final_iker_markel
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.fragment.findNavController
 import com.example.proyecto_android_final_iker_markel.databinding.FragmentModificarBinding
 
