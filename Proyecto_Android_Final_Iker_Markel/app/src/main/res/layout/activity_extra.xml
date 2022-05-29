@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/libros_editada"
     tools:context=".ExtraActivity">
 
     <LinearLayout
@@ -19,6 +20,7 @@
             android:layout_marginLeft="125dp"
             android:layout_marginRight="125dp"
             android:layout_marginBottom="50dp"
+            android:textColor="@color/black"
             android:textSize="30sp"
             android:text="@string/hecho_por" />
 
@@ -29,6 +31,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:layout_marginBottom="50dp"
+            android:textColor="@color/black"
             android:textSize="30sp"
             android:text="@string/iker_lerones_y_markel_fernandez_de_labastida" />
 
