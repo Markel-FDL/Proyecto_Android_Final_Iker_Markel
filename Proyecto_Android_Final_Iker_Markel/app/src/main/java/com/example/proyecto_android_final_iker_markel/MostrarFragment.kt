@@ -46,6 +46,7 @@ class MostrarFragment : Fragment() {
 
         binding.eliminar.setOnClickListener{
             (activity as MainActivity).miViewModel.eliminarLibro((activity as MainActivity).miViewModel.listaLibros[id].id)
+            Toast.makeText(activity, "Libro eliminado", Toast.LENGTH_SHORT).show()
             (activity as MainActivity).miViewModel.actualizarLista()
             findNavController().navigate(R.id.action_mostrarFragment3_to_FirstFragment)
         }

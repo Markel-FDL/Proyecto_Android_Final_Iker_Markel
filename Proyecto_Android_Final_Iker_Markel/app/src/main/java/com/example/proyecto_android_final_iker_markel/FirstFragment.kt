@@ -57,8 +57,9 @@ class FirstFragment : Fragment() {
     }
 
     override fun onResume() {
-        val ft: FragmentTransaction = requireFragmentManager().beginTransaction()
-        ft.detach(this).attach(this).commit()
+        (activity as MainActivity).miViewModel.actualizarLista()
+        miRecyclerView.adapter?.notifyDataSetChanged()
+
         super.onResume()
     }
 }
